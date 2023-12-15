@@ -15,7 +15,7 @@ namespace Administrador
             InitializeComponent();
             try
             {
-                string strconexao = "datasource=localhost;username=root;pwd=kingjaws123;database=helpdesk";
+                string strconexao = "datasource=localhost;username=root;pwd=123;database=helpdesk";
                 conexao = new MySqlConnection(strconexao);
             }
             catch (Exception ex)
@@ -30,7 +30,7 @@ namespace Administrador
             try
             {
                 // Fazendo uma consulta na minha tabela passando item por item.
-                // Usuario e senha devem corresponder aos par‚metros
+                // Usuario e senha devem corresponder aos par√¢metros
                 string query = "SELECT * FROM administrador WHERE usuario = @Usuario AND senha = @Senha;";
 
                 // cmd cria um objeto pro comando SQL ser executado
