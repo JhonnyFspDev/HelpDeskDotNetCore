@@ -19,7 +19,7 @@ namespace Administrador
             InitializeComponent();
             try
             {
-                string strconexao = "datasource=localhost;user=root;pwd=kingjaws123;database=helpdesk";
+                string strconexao = "datasource=localhost;user=root;pwd=123;database=helpdesk";
                 conexao = new MySqlConnection(strconexao);
                 conexao.Open();
                 MessageBox.Show("Conexao feita");
