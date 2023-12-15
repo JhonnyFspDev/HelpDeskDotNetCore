@@ -11,12 +11,12 @@ namespace HelpDeskDotNetCore
             InitializeComponent();
             try
             {
-                //Conex„o com o MySQL
+                //Conex√£o com o MySQL
 
-                var strconexao = "datasource=localhost;username=root;pwd=kingjaws123;database=helpdesk";
+                var strconexao = "datasource=localhost;username=root;pwd=123;database=helpdesk";
                 conexao = new MySqlConnection(strconexao);
                 conexao.Open();
-                MessageBox.Show("Conex„o com BD realizada");
+                MessageBox.Show("Conex√£o com BD realizada");
 
             }
             catch (Exception ex)
@@ -35,7 +35,7 @@ namespace HelpDeskDotNetCore
             try
             {
                 conexao.Open();
-                // CÛdigo para auto preenchimento do email de acordo com o ID do usu·rio
+                // C√≥digo para auto preenchimento do email de acordo com o ID do usu√°rio
 
                 string query = "SELECT email, nome FROM cliente WHERE id = " + txtId.Text + ";";
                 MySqlCommand cmdquery = new MySqlCommand(query, conexao);
@@ -72,7 +72,7 @@ namespace HelpDeskDotNetCore
         {
             try
             {
-                // Inserir dados na cabela 'chamado' ao clicar no bot„o enviar
+                // Inserir dados na cabela 'chamado' ao clicar no bot√£o enviar
                 conexao.Open();
 
                 if(txtId.Text == ""||txtAssunto.Text == "" || txtDescricao.Text == "")
@@ -82,7 +82,7 @@ namespace HelpDeskDotNetCore
                 }
                 else
                 {
-                    //Lembrar de usar par‚metros para melhor seguranÁa
+                    //Lembrar de usar par√¢metros para melhor seguran√ßa
                     string sql = "INSERT INTO chamado (id_cliente, email, nome, assunto, descricao) " +
                         "VALUES (@IdCliente, @Email, @Nome, @Assunto, @Descricao)";
 
@@ -93,8 +93,8 @@ namespace HelpDeskDotNetCore
                     comando.Parameters.AddWithValue("@Assunto", txtAssunto.Text);
                     comando.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
 
-                    //Para inserir dados numa tabela È recomendavel esse comando
-                    //ExecuÁ„o da instruÁ„o SQL
+                    //Para inserir dados numa tabela √© recomendavel esse comando
+                    //Execu√ß√£o da instru√ß√£o SQL
                     comando.ExecuteNonQuery();
                     MessageBox.Show("Registro inserido com sucesso");
 
@@ -109,7 +109,7 @@ namespace HelpDeskDotNetCore
             }
             finally
             {
-                //MessageBox.Show("Conex„o finalizada");
+                //MessageBox.Show("Conex√£o finalizada");
                 conexao.Close();
             }
         }
